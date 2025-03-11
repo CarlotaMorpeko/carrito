@@ -6,6 +6,8 @@ package mx.itson.carrito.ui;
 
 import java.util.Scanner;
 import mx.itson.carrito.entidades.Carro;
+import mx.itson.carrito.entidades.EquipoSonido;
+import mx.itson.carrito.entidades.Propietario;
 import mx.itson.carrito.enums.TipoMotor;
 import mx.itson.carrito.enums.TipoTransmision;
 
@@ -33,14 +35,36 @@ public class Main {
         bmw.setTipoMotor(TipoMotor.HIBRIDO);
         bmw.setTipoTransmision(TipoTransmision.ESTANDAR);
         
+        
+        Propietario prop = new Propietario();
+        prop.setNombre("Gary");
+        prop.setDomicilio("Calle 23 colonia cengro");
+        prop.setTelefono("6221734422");
+        prop.setEmail("panfilomeno@gmail.com");
+        
+        bmw.setPropietario(prop);
+        
+        EquipoSonido mamalon = new EquipoSonido();
+        mamalon.setMarca("JBL");
+        mamalon.setPotenciaSonido("75 watts");
+        mamalon.setSalidaAudio("Estereo");
+        mamalon.setModelo("GTO609C");
+        mamalon.setMusica("La trakalosa de Monterrey");
+        mamalon.setTieneBluetooth(true); 
+        
+        bmw.setEquipoSonido(mamalon);
+        
         // Invocamos al metodo contenido en la clase Carro
         double tiempo = bmw.calcularTiempo(distancia, velocidad);
         
         System.out.println("El tiempo que le tomará al carro " 
                 + bmw.getMarca() 
                 + " de color " + bmw.getColor() +
-                " y cuyo modelo es " + bmw.getAnio() + " sera de " + tiempo +
-                " y ahora su kilometraje es de " + bmw.getKilometraje());
+                " y cuyo modelo es " + bmw.getAnio()+ " que ademas cuenta con un estereo de la marca "
+                + bmw.getEquipoSonido().getMarca() + " sera de " + tiempo +
+                " y ahora su kilometraje es de " + bmw.getKilometraje()
+                + " El propietariode de este carrito es " + bmw.getPropietario().getNombre()
+                + " y esta escuchando " + bmw.getEquipoSonido().getMusica());
         
     }
 }

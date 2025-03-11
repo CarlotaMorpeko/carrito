@@ -6,12 +6,42 @@ package mx.itson.carrito.entidades;
 
 import mx.itson.carrito.enums.TipoMotor;
 import mx.itson.carrito.enums.TipoTransmision;
+import mx.itson.carrito.entidades.Propietario;
+import mx.itson.carrito.entidades.EquipoSonido;
 
 /**
  *
  * @author Technologyland
  */
 public class Carro {
+
+    /**
+     * @return the equipoSonido
+     */
+    public EquipoSonido getEquipoSonido() {
+        return equipoSonido;
+    }
+
+    /**
+     * @param equipoSonido the equipoSonido to set
+     */
+    public void setEquipoSonido(EquipoSonido equipoSonido) {
+        this.equipoSonido = equipoSonido;
+    }
+
+    /**
+     * @return the propietario
+     */
+    public Propietario getPropietario() {
+        return propietario;
+    }
+
+    /**
+     * @param propietario the propietario to set
+     */
+    public void setPropietario(Propietario propietario) {
+        this.propietario = propietario;
+    }
 
     /**
      * @return the tipoTransmision
@@ -103,6 +133,8 @@ public class Carro {
     private double kilometraje;
     private TipoMotor tipoMotor;
     private TipoTransmision tipoTransmision;
+    private Propietario propietario;
+    private EquipoSonido equipoSonido;
     
     /**
      * Calcula el tiempo que tarda el carro en recorrer una distancia.
